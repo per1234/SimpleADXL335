@@ -1,7 +1,7 @@
 SimpleADXL335:
 ============
 
-A simple interface to ADXL335 3-axis accelerometer which provides easy access to 360 degree values of x,y,z data. No more, no less.
+A simple interface to ADXL335 3-axis accelerometer which provides easy access to -90~90 degree values of x,y,z data. No more, no less.
 
 
 Installation:
