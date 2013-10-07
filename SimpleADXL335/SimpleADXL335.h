@@ -1,7 +1,7 @@
 /*
 SimpleADXL335.h
 Simple interface to ADXL335 3-axis accelerometer which provides easy access to 360 degree values of x,y,z data.
-Code based on portions of USBgamepad example by Limor Fried (https://github.com/adafruit/USBgamepad/blob/master/teensySNES_test2/teensySNES_test2.pde)
+Code based on portions of USBgamepad example by Limor Fried (https://github.com/adafruit/USBgamepad/)
 
 Sam Sheffield (hello@samsheffield.com)
 */
@@ -15,14 +15,16 @@ Sam Sheffield (hello@samsheffield.com)
 #include "WProgram.h"
 #endif
 
-class SimpleADXL335
-{
+class SimpleADXL335 {
   public:
     SimpleADXL335(int xPin, int yPin, int zPin); //
     float getX();
     float getY();
     float getZ();
     void update();
+    void setRangeX(int minRawX, int maxRawX);
+    void setRangeY(int minRawY, int maxRawY);
+    void setRangeZ(int minRawZ, int maxRawZ);
 
   private:
     int _xPin;
@@ -41,8 +43,15 @@ class SimpleADXL335
     float _y;
     float _z;
 
-    int _minRaw;
-    int _maxRaw;
+    int _minRawX;
+    int _maxRawX;
+    int _minRawY;
+    int _maxRawY;
+    int _minRawZ;
+    int _maxRawZ;
+
 };
+
+
 
 #endif
